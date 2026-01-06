@@ -12,7 +12,7 @@ const int DERROTA_IA = -10;
  */
 void imprimirIndentacao(int profundidade) {
     for (int i = 0; i < profundidade; ++i) {
-        cout << "    |"; // 4 espaços e uma barra para simular o galho
+        cout << "    |";
     }
     cout << "-- ";
 }
@@ -52,7 +52,7 @@ int minimax(int palitos, bool ehVezDaIA, int profundidade) {
                 // Chama recursivamente com profundidade + 1
                 int score = minimax(palitos - jogada, false, profundidade + 1);
 
-                // Atualiza e mostra comparação (opcional, ajuda a entender a escolha)
+                // Atualiza e mostra comparação
                 if (score > melhorScore) {
                     melhorScore = score;
                 }
@@ -81,7 +81,7 @@ int minimax(int palitos, bool ehVezDaIA, int profundidade) {
             }
         }
 
-        // VISUALIZAÇÃO: Mostra o valor decidido para este nó
+        // Imprime o valor decidido para este nó
         imprimirIndentacao(profundidade);
         cout << "<- MIN retorna: " << piorScore << endl;
 
